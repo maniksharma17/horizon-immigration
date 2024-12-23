@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="pt-16 relative">
       {/* Hero Section */}
-      <section className="py-20 align-middle h-[40vh] max-md:h-[48vh] top-0 absolute left-0 right-0 text-gray-100 bg-cover bg-no-repeat"
+      <section className="py-20 align-middle h-[40vh] max-md:h-[45vh] top-0 absolute left-0 right-0 text-gray-100 bg-cover bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${images.about})`,
         backgroundPositionY: width? -520 : 0,
@@ -16,7 +16,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-6xl mt-10">
           <div className="text-center text-white flex flex-col justify-center items-center">
             <h1 className="text-4xl font-bold mb-6">About Horizon Immigration</h1>
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed max-md:text-sm">
               We are a leading recruitment agency in the UAE, dedicated to connecting
               exceptional talent with outstanding opportunities. Our expertise spans
               across multiple industries, ensuring the perfect match between
@@ -27,7 +27,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 cross-bg from-gray-200 to-transparent mt-64 max-md:mt-96">
+      <section className="py-20 cross-bg from-gray-200 to-transparent mt-64 max-md:mt-80">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className='bg-white/70 rounded-xl shadow-xl py-6 px-4'>
@@ -38,7 +38,7 @@ const About = () => {
                 throughout the recruitment and immigration process.
               </p>
             </div>
-            <div className='bg-white/70 rounded-xl shadow-xl py-6 px-4 h-[200px]'>
+            <div className='bg-white/70 rounded-xl shadow-xl py-6 px-4 '>
               <h2 className="text-3xl font-bold mb-4 text-gray-700">Our Vision</h2>
               <p className="text-muted-foreground leading-relaxed">
                 To be the most trusted and preferred recruitment partner in the UAE,
