@@ -37,7 +37,7 @@ const Navbar = () => {
               className={cn(
                 'font-bold text-xl transition-colors',
                 isScrolled ? 'text-foreground' : 'text-primary-foreground',
-                (location.pathname !== '/' && location.pathname !== '/about')  && 'text-foreground'
+                (location.pathname !== '/')  && 'text-foreground'
               )}
             >
               Horizon Immigration
@@ -60,7 +60,7 @@ const Navbar = () => {
                     ? 'border-b-4 border-primary font-medium text-secondary'
                     : '',
                   isScrolled ? 'text-foreground' : 'text-secondary-foreground',
-                  (location.pathname !== '/' && location.pathname !== '/about') && 'text-foreground'
+                  (location.pathname !== '/') && 'text-foreground'
                 )}
               >
                 {name}

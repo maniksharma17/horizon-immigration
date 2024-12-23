@@ -7,13 +7,13 @@ const About = () => {
   return (
     <div className="pt-16 relative">
       {/* Hero Section */}
-      <section className="py-20 align-middle h-[40vh] max-md:h-[45vh] top-0 absolute left-0 right-0 text-gray-100 bg-cover bg-no-repeat"
+      <section className="py-20 align-middle text-gray-100 bg-cover bg-no-repeat"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${images.about})`,
-        backgroundPositionY: width? -520 : 0,
+        backgroundPositionY: width? -550 : 0,
       }}
       >
-        <div className="container mx-auto px-4 max-w-6xl mt-10">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center text-white flex flex-col justify-center items-center">
             <h1 className="text-4xl font-bold mb-6">About Horizon Immigration</h1>
             <p className="text-lg leading-relaxed max-md:text-sm">
@@ -27,7 +27,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 cross-bg from-gray-200 to-transparent mt-64 max-md:mt-80">
+      <section className="py-20 cross-bg from-gray-200 to-transparent">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className='bg-white/70 rounded-xl shadow-xl py-6 px-4'>
