@@ -173,7 +173,7 @@ const Jobs = () => {
               </CardContent>
               <CardFooter>
                 <Button 
-                onClick={()=>navigate('/contact')}
+                onClick={()=>{navigate('/contact'); window.scrollTo(0, 0)}}
                 className="w-full hover:scale-105 transition-all duration-200 hover:bg-orange-600">
                   Apply Now
                 </Button>
