@@ -17,9 +17,9 @@ const About = () => {
           </div>
         </div>
         <div className='mt-4 px-24 max-md:px-4 flex flex-row max-md:flex-col gap-2 justify-center'>
-          <img src={images.about3} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
-          <img src={images.about2} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
-          <img src={images.about1} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about1.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about2.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about3.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
         </div>
       </section>
       

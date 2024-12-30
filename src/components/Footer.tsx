@@ -49,18 +49,11 @@ const Footer = () => {
           <div className='text-left'>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-md font-light">
-              <li className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>Roorkee, Uttarakhand, India</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <span>+971 XX XXX XXXX</span>
-              </li>
-              <li className="flex items-center space-x-3">
+              <li className="flex flex-col items-start">
                 <Mail className="h-5 w-5 text-primary" />
                 <span>team@immigrationhorizon.com</span>
               </li>
+              
             </ul>
           </div>
         </div>

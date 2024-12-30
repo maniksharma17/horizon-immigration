@@ -13,7 +13,7 @@ const Home = () => {
       <section 
         className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16"
         style={{ 
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${images.hero})` 
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${`/hero.avif`})` 
         }}
       >
         <div className="container px-4 py-32">

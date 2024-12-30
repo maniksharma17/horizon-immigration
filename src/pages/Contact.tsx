@@ -52,23 +52,30 @@ const Contact = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.success('Form submitted successfully!');
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const url = "https://script.google.com/macros/s/AKfycbxrxMNsnVROYXL9Lk46nz8a8_9TVZ-PHDVHJAJadOlXlPhOjhpPrVNR1CpwrxsTFBWR/exec"
+    fetch(url,{
+      method:"POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body:(`FullName=${values.fullName}&Phone=${values.phone}&Email=${values.email}&City=${values.city}&State=${values.state}&Country=${values.country}&PinCode=${values.pinCode}&Experience=${values.experience}&JobType=${values.jobType}&Message=${values.message}`)
+    }).then(res=>res.text()).then(data=>{
+      toast.success("Submitted successfully.")
+      console.log(data)
+    }).catch(error=>console.log(error))
   }
 
   return (
-    <div className='relative'>
+    <div className='relative check-bg flex lg:flex-row flex-col lg:px-20 lg:pt-10 px-4 pt-16 items-center'>
       {/* Hero Section */}
-      <div className="bg-transparent pt-16 pb-4">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="aspect-w-16 aspect-h-9 flex items-center justify-center p-8">
+      <div className="bg-transparent">
+        <div className="container mx-auto max-w-5xl p-8">
+          <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl max-md:text-3xl font-bold mb-4">Contact Us</h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Reach out to us for inquiries or assistance with UAE immigration and job opportunities.
               </p>
-              <div className="flex flex-row max-md:flex-col gap-4">
+              <div className="flex flex-row justify-center max-md:flex-col gap-4">
                 {[
                   {
                     icon: Mail,
@@ -76,9 +83,9 @@ const Contact = () => {
                     details: 'team@immigrationhorizon.com',
                   },
                 ].map((item, index) => (
-                  <div key={index} className="text-left border p-4 overflow-x-clip rounded-lg shadow-lg">
-                    <item.icon className="h-8 w-8 align-left mx-auto mb-4 text-primary max-md:inline mt-1 mr-2" />
-                    <h3 className="font-semibold max-md:text-lg mb-2 max-md:inline">{item.title}</h3>
+                  <div key={index} className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
+                    <item.icon className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
+                    <h3 className="font-semibold max-md:text-lg mb-2 inline">{item.title}</h3>
                     <p className="text-muted-foreground">{item.details}</p>
                     <Button variant={"outline"} className='mt-2'><a href="mailto:team@immigrationhorizon.com?body=Hello">Send Mail</a></Button>
                   </div>
@@ -90,9 +97,9 @@ const Contact = () => {
       </div>
 
       {/* Contact Form */}
-      <div className="container py-8 m-auto w-full contact-check-bg">
-        <div className="max-w-4xl mx-auto bg-white p-8 shadow-2xl">
-          <h2 className="text-4xl font-bold mb-6 text-center">Get in Touch</h2>
+      <div className="container py-8 m-auto w-full">
+        <div className="max-w-4xl mx-auto bg-white/80 p-8 shadow-2xl border">
+          <h2 className="text-4xl text-orange-600 font-bold mb-6 text-center">Get in Touch</h2>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -119,7 +126,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
-                      <Input placeholder="+971 XX XXX XXXX" {...field} />
+                      <Input placeholder="+91 XXXX XXX XXX" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -151,7 +158,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Country</FormLabel>
                     <FormControl>
-                      <Input placeholder="United Arab Emirates" {...field} />
+                      <Input placeholder="India" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -165,7 +172,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>State</FormLabel>
                     <FormControl>
-                      <Input placeholder="Dubai" {...field} />
+                      <Input placeholder="Maharashtra" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -179,7 +186,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>City</FormLabel>
                     <FormControl>
-                      <Input placeholder="Dubai City" {...field} />
+                      <Input placeholder="Mumbai" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -193,7 +200,7 @@ const Contact = () => {
                   <FormItem>
                     <FormLabel>Pin Code</FormLabel>
                     <FormControl>
-                      <Input placeholder="00000" {...field} />
+                      <Input placeholder="400016" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
