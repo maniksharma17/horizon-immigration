@@ -59,7 +59,7 @@ const Contact = () => {
     try{
       setIsLoading(true)
       const url = "https://script.google.com/macros/s/AKfycbxrxMNsnVROYXL9Lk46nz8a8_9TVZ-PHDVHJAJadOlXlPhOjhpPrVNR1CpwrxsTFBWR/exec"
-      fetch(url,{
+      await fetch(url,{
         method:"POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body:(`FullName=${values.fullName}&Phone=${values.phone}&Email=${values.email}&City=${values.city}&State=${values.state}&Country=${values.country}&PinCode=${values.pinCode}&Experience=${values.experience}&JobType=${values.jobType}&Message=${values.message}`)
