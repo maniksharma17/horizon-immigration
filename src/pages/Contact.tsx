@@ -71,25 +71,16 @@ const Contact = () => {
               <div className="flex flex-row max-md:flex-col gap-4">
                 {[
                   {
-                    icon: MapPin,
-                    title: 'Address',
-                    details: 'Dubai, United Arab Emirates',
-                  },
-                  {
-                    icon: Phone,
-                    title: 'Phone',
-                    details: '+971 XX XXX XXXX',
-                  },
-                  {
                     icon: Mail,
                     title: 'Email',
-                    details: 'contact@horizonimmigration.com',
+                    details: 'team@immigrationhorizon.com',
                   },
                 ].map((item, index) => (
-                  <div key={index} className="text-center border p-4 overflow-x-clip rounded-lg shadow-lg">
-                    <item.icon className="h-8 w-8 align-left mx-auto mb-4 text-primary" />
-                    <h3 className="font-semibold mb-2">{item.title}</h3>
+                  <div key={index} className="text-left border p-4 overflow-x-clip rounded-lg shadow-lg">
+                    <item.icon className="h-8 w-8 align-left mx-auto mb-4 text-primary max-md:inline mt-1 mr-2" />
+                    <h3 className="font-semibold max-md:text-lg mb-2 max-md:inline">{item.title}</h3>
                     <p className="text-muted-foreground">{item.details}</p>
+                    <Button variant={"outline"} className='mt-2'><a href="mailto:team@immigrationhorizon.com?body=Hello">Send Mail</a></Button>
                   </div>
                 ))}
               </div>

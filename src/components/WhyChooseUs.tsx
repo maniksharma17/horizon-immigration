@@ -2,6 +2,9 @@ import {
   Briefcase,
   TrendingUp,
   CheckCircle,
+  Waypoints,
+  UserCheck,
+  Sparkles
 } from 'lucide-react';
 
 const WhyChooseUs = () => {
@@ -13,7 +16,7 @@ const WhyChooseUs = () => {
           {content.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col shadow-lg text-left max-md:p-4 items-start space-y-4 p-8 rounded-xl bg-white/80 border hover:border-gray-300 hover:scale-105 duration-300 transition-all"
+              className="flex flex-col text-left max-md:p-4 items-start space-y-4 p-8 rounded-xl bg-white/80 border hover:shadow-lg hover:scale-105 duration-300 transition-all"
             >
               <feature.icon className="h-12 w-12 text-accent" />
               <div>
@@ -31,33 +34,33 @@ const WhyChooseUs = () => {
 const content = [
   {
     icon: CheckCircle,
-    title: 'Proven Track Record',
-    description: 'Successfully placed thousands of candidates in the UAE.',
+    title: 'Expert Knowledge of UAE Market',
+    description: 'Our team has extensive experience and knowledge of the UAE job market, ensuring we find the best fit for your career goals.',
   },
   {
     icon: TrendingUp,
-    title: 'Industry Expertise',
-    description: 'Deep understanding of UAE job market and requirements.',
+    title: 'Proven Track Record of Success',
+    description: 'With a history of successful placements, we have built a reputation as a trusted and reliable recruitment partner in the UAE.',
   },
   {
     icon: Briefcase,
-    title: 'Career Growth',
-    description: 'Focus on long-term success and professional development.',
+    title: 'Personalized Recruitment Services',
+    description: 'We take the time to understand your skills, experience, and career aspirations, providing tailored recruitment solutions.',
   },
   {
-    icon: CheckCircle,
-    title: 'Proven Track Record',
-    description: 'Successfully placed thousands of candidates in the UAE.',
+    icon: Waypoints,
+    title: 'Strong Network of Employers',
+    description: 'Our established relationships with leading UAE employers across various industries ensure access to exclusive job opportunities.',
   },
   {
-    icon: TrendingUp,
-    title: 'Industry Expertise',
-    description: 'Deep understanding of UAE job market and requirements.',
+    icon: Sparkles,
+    title: 'Seamless Placement Process',
+    description: 'Our dedicated team guides you through every step of the recruitment process, ensuring a smooth transition into your new role.',
   },
   {
-    icon: Briefcase,
-    title: 'Career Growth',
-    description: 'Focus on long-term success and professional development.',
+    icon: UserCheck,
+    title: 'Candidate-Centric Approach',
+    description: 'We prioritize your needs and goals, providing ongoing support and career guidance to help you achieve success.',
   },
 ];
 

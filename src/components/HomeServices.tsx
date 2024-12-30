@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import {
   Building2,
   Users,
@@ -48,11 +48,13 @@ const HomeServices = () => {
           ].map((service, index) => (
             <Card
               key={index}
-              className="bg-white/90 p-4 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 border border-gray-200">
-              <CardContent className="text-left">
-                <service.icon className="h-12 w-12 mb-4 max-md:mb-2 text-primary" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-700">{service.description}</p>
+              className="bg-white/80 p-0 rounded-xl border hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+              <CardHeader>
+                <service.icon className="h-12 w-12 text-primary inline mb-2" />
+                <h3 className="text-xl text-left font-semibold text-gray-900">{service.title}</h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-left">{service.description}</p>
               </CardContent>
             </Card>
           ))}

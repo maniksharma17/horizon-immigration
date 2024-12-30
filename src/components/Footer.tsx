@@ -51,7 +51,7 @@ const Footer = () => {
             <ul className="space-y-3 text-md font-light">
               <li className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>Dubai, UAE</span>
+                <span>Roorkee, Uttarakhand, India</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary" />
@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>contact@horizonimmigration.com</span>
+                <span>team@immigrationhorizon.com</span>
               </li>
             </ul>
           </div>

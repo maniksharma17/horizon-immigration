@@ -74,10 +74,7 @@ const Navbar = () => {
           >
             {isMobileMenuOpen ? (
               <X className={cn(
-                "h-6 w-6",
-                isScrolled
-                ? 'text-black'
-                : 'text-primary-foreground'
+                "h-6 w-6 text-primary",
               )} />
             ) : (
               <Menu className="h-6 w-6 text-primary" />
@@ -87,7 +84,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-2 space-y-2 rounded-lg shadow-lg p-4 bg-background">
+          <div className="md:hidden mt-2 space-y-2 border absolute right-5 top-10 rounded-lg shadow-lg p-4 bg-background">
             {[
               ['Home', '/'],
               ['About', '/about'],
@@ -98,7 +95,7 @@ const Navbar = () => {
                 key={path}
                 to={path}
                 className={cn(
-                  'block py-2 px-4 rounded-md transition-colors hover:bg-muted',
+                  'block py-2 px-4 border rounded-md transition-colors hover:bg-muted',
                   location.pathname === path
                     ? 'bg-primary text-white font-medium'
                     : 'text-muted-foreground'

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import {
   Select,
@@ -8,18 +9,102 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Degree, Clock, Search, Wrench } from "lucide-react";
+import { Briefcase, GraduationCap, Clock, Search, Wrench } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
+interface JobType {
+  title: string;
+  description: string;
+  skills: string;
+  experience: string;
+  salary: string;
+  age: string;
+  education: string;
+}
 
 const Jobs = () => {
+  const navigate = useNavigate()
+  const [filter, setFilter] = useState("");
+  const [category, setCategory] = useState("all");
+  const [filteredJobs, setFilteredJobs] = useState<JobType[]>([]);
+  
+  const [jobCategories, setJobCategories] = useState<Record<string, JobType[]>>({
+    warehouse: [] as JobType[],
+    hr: [] as JobType[],
+    sales: [] as JobType[],
+    trade: [] as JobType[],
+    hospitality: [] as JobType[],
+    all: [] as JobType[],
+  });
+
+  // Classify jobs based on title
+  const classifyJob = (job: JobType): string => {
+    const warehouseKeywords = ["warehouse", "logistics", "supply"];
+    const hrKeywords = ["hr", "admin", "human resource"];
+    const salesKeywords = ["sales", "customer"];
+    const tradeKeywords = ["technician", "electrician", "welder", "plumber", "mason", "carpenter", "painter", "foreman"];
+    const hospitalityKeywords = ["chef", "cook", "service crew", "restaurant", "hospitality"];
+
+    const titleLower = job.title.toLowerCase();
+
+    if (warehouseKeywords.some(keyword => titleLower.includes(keyword))) return "warehouse";
+    if (hrKeywords.some(keyword => titleLower.includes(keyword))) return "hr";
+    if (salesKeywords.some(keyword => titleLower.includes(keyword))) return "sales";
+    if (tradeKeywords.some(keyword => titleLower.includes(keyword))) return "trade";
+    if (hospitalityKeywords.some(keyword => titleLower.includes(keyword))) return "hospitality";
+    return "all";
+  };
+
+  // Initialize job categories
+  useEffect(() => {
+    const categorizedJobs = jobs.reduce(
+      (acc, job) => {
+        const category = classifyJob(job);
+        acc[category].push(job);
+        acc.all.push(job);
+        return acc;
+      },
+      { warehouse: [], hr: [], sales: [], trade: [], hospitality: [], all: [] } as Record<string, JobType[]>
+    );
+    setJobCategories(categorizedJobs);
+    setFilteredJobs(categorizedJobs.all);
+  }, []);
+
+  // Filter jobs based on search and category
+  useEffect(() => {
+    const searchLower = filter.toLowerCase();
+    const filtered = jobCategories[category].filter((job: JobType) =>
+      job.title.toLowerCase().includes(searchLower)
+    );
+    setFilteredJobs(filtered);
+  }, [filter, category, jobCategories]);
+
+  const [pageNumber, setPageNumber] = useState(1)
+  const itemsPerPage = 9
+  const [currentJobs, setCurrentJobs] = useState<JobType[]>(filteredJobs)
+  const totalPages = Math.ceil(filteredJobs.length / itemsPerPage)
+
+  useEffect(()=>{
+    const startIndex = (pageNumber - 1) * itemsPerPage
+    const currentData = filteredJobs.slice(startIndex, startIndex + itemsPerPage)
+    setCurrentJobs(currentData)
+    
+  }, [pageNumber, itemsPerPage, filteredJobs])
+
+  const goToPage = (pageNumber: number) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setPageNumber(pageNumber);
+      window.scrollTo(0, 0)
+    }
+  };
+
   return (
-    <div className="pt-16">
+    <div className="pt-16 h-auto mb-32">
       <div className="container px-4 py-20 m-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Job Opportunities</h1>
           <p className="text-lg text-muted-foreground">
-            Explore the latest job opportunities across various industries in
-            the UAE
+            Explore the latest job opportunities across various industries in the UAE.
           </p>
         </div>
 
@@ -27,64 +112,49 @@ const Jobs = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search jobs..." className="pl-9" />
+            <Input
+              onChange={e => setFilter(e.target.value)}
+              placeholder="Search jobs..."
+              className="pl-9"
+            />
           </div>
-          <Select>
-            <SelectTrigger>
-              <SelectValue placeholder="Location" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="dubai">Dubai</SelectItem>
-              <SelectItem value="abu-dhabi">Abu Dhabi</SelectItem>
-              <SelectItem value="sharjah">Sharjah</SelectItem>
-            </SelectContent>
-          </Select>
-          <Select>
+
+          <Select value={category} onValueChange={setCategory}>
             <SelectTrigger>
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="warehouse">Warehouse & Logistics</SelectItem>
-              <SelectItem value="sales">Sales</SelectItem>
               <SelectItem value="hr">HR</SelectItem>
               <SelectItem value="trade">Trade Jobs</SelectItem>
               <SelectItem value="hospitality">Hospitality</SelectItem>
-            </SelectContent>
-          </Select>
-          <Select>
-            <SelectTrigger>
-              <SelectValue placeholder="Experience" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="entry">Entry Level</SelectItem>
-              <SelectItem value="intermediate">Intermediate</SelectItem>
-              <SelectItem value="senior">Senior</SelectItem>
-              <SelectItem value="expert">Expert</SelectItem>
+              <SelectItem value="sales">Sales</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         {/* Job Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {jobs.map((job, index) => (
+          {currentJobs.map((job, index) => (
             <Card key={index}>
-              <CardContent className="pt-6">
+              <CardContent className="pt-6 h-fit">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="font-semibold text-lg mb-1 w-full">{job.title}</h3>
+                    <h3 className="font-semibold text-left text-lg mb-1 w-full">
+                      {job.title}
+                    </h3>
                   </div>
-                  
                   <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
                     {"Full Time"}
                   </div>
-                  
                 </div>
                 <p className="text-muted-foreground text-left text-sm mb-4">
                   {job.description}
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-muted-foreground">
-                    <Briefcase className="h-4 w-4 mr-2" size={20}/>
+                    <Briefcase className="h-4 w-4 mr-2" size={20} />
                     <span className="w-fit text-left">{job.experience}</span>
                   </div>
                   <div className="flex items-center text-muted-foreground">
@@ -96,23 +166,55 @@ const Jobs = () => {
                     <span className="w-fit text-left">{job.skills}</span>
                   </div>
                   <div className="flex items-center text-left text-muted-foreground">
-                    <Degree className="h-4 w-4 mr-2" />
+                    <GraduationCap className="h-4 w-4 mr-2" />
                     <span className="w-fit text-left">{job.education}</span>
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Apply Now</Button>
+                <Button 
+                onClick={()=>navigate('/contact')}
+                className="w-full hover:scale-105 transition-all duration-200 hover:bg-orange-600">
+                  Apply Now
+                </Button>
               </CardFooter>
             </Card>
           ))}
+        </div>
+      </div>
+
+      <div className="flex flex-row gap-8 justify-center items-center">
+        <div>
+          <Button 
+          onClick={() => goToPage(pageNumber - 1)}
+          disabled={pageNumber === 1}
+          variant={"outline"}>Prev</Button>
+        </div>
+        <div>
+          {pageNumber}/{totalPages}
+        </div>
+        <div>
+          <Button 
+          onClick={() => goToPage(pageNumber + 1)}
+          disabled={pageNumber === totalPages}
+          variant={"outline"}>Next</Button>
         </div>
       </div>
     </div>
   );
 };
 
-const jobs = [
+interface JobType {
+  title: string,
+  description: string,
+  skills: string,
+  experience: string,
+  salary: string,
+  age: string,
+  education: string,
+}
+
+const jobs: JobType[] = [
   {
     title: "Indian Tandoor Chef",
     description:
