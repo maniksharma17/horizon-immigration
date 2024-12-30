@@ -1,4 +1,4 @@
-import { Building2, Mail, MapPin, Phone } from 'lucide-react';
+import { Building2, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
