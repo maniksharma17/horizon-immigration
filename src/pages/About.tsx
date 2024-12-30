@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Target, Heart, TrendingUp, Sparkles } from 'lucide-react';
-import { images } from '@/lib/constants';
 
 const About = () => {
   return (

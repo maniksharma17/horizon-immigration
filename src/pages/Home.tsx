@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Testimonials from '@/components/Testimonials';
-import { images } from '@/lib/constants';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import HomeServices from '@/components/HomeServices';
 import FAQSection from '@/components/HomeFAQ';
