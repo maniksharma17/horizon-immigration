@@ -21,7 +21,6 @@ import {
 } from '@/components/ui/select';
 import { toast } from 'sonner';
 import { Mail } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   fullName: z.string().min(5, 'Full name must be at least 5 characters'),
