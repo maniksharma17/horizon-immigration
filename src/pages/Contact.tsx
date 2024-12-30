@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/select';
 import { toast } from 'sonner';
 import { Mail } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   fullName: z.string().min(5, 'Full name must be at least 5 characters'),
@@ -36,6 +37,8 @@ const formSchema = z.object({
 });
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,15 +56,23 @@ const Contact = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const url = "https://script.google.com/macros/s/AKfycbxrxMNsnVROYXL9Lk46nz8a8_9TVZ-PHDVHJAJadOlXlPhOjhpPrVNR1CpwrxsTFBWR/exec"
-    fetch(url,{
-      method:"POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body:(`FullName=${values.fullName}&Phone=${values.phone}&Email=${values.email}&City=${values.city}&State=${values.state}&Country=${values.country}&PinCode=${values.pinCode}&Experience=${values.experience}&JobType=${values.jobType}&Message=${values.message}`)
-    }).then(res=>res.text()).then(data=>{
-      toast.success("Submitted successfully.")
-      console.log(data)
-    }).catch(error=>console.log(error))
+    try{
+      setIsLoading(true)
+      const url = "https://script.google.com/macros/s/AKfycbxrxMNsnVROYXL9Lk46nz8a8_9TVZ-PHDVHJAJadOlXlPhOjhpPrVNR1CpwrxsTFBWR/exec"
+      fetch(url,{
+        method:"POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body:(`FullName=${values.fullName}&Phone=${values.phone}&Email=${values.email}&City=${values.city}&State=${values.state}&Country=${values.country}&PinCode=${values.pinCode}&Experience=${values.experience}&JobType=${values.jobType}&Message=${values.message}`)
+      }).then(res=>res.text()).then(data=>{
+        toast.success("Submitted successfully.")
+        console.log(data)
+      }).catch(error=>console.log(error))
+    } catch(error){
+      console.log(error)
+    } finally {
+      setIsLoading(false)
+    }
+    
   }
 
   return (
@@ -282,8 +293,8 @@ const Contact = () => {
                 )}
               />
 
-              <Button type="submit" className="md:col-span-2 bg-gradient-to-b from-accent to-orange-700">
-                Submit
+              <Button type="submit" disabled={isLoading} className="md:col-span-2 bg-gradient-to-b from-accent to-orange-700">
+                {isLoading? "Submitting...":"Submit"}
               </Button>
             </form>
           </Form>
