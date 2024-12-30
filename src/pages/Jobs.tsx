@@ -99,7 +99,7 @@ const Jobs = () => {
   };
 
   return (
-    <div className="pt-16 h-auto mb-32">
+    <div className="pt-16 h-auto pb-32 check-bg">
       <div className="container px-4 py-20 m-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Job Opportunities</h1>
@@ -115,15 +115,15 @@ const Jobs = () => {
             <Input
               onChange={e => setFilter(e.target.value)}
               placeholder="Search jobs..."
-              className="pl-9"
+              className="pl-9 bg-white shadow-md"
             />
           </div>
 
           <Select value={category} onValueChange={setCategory}>
-            <SelectTrigger>
+            <SelectTrigger className="bg-white shadow-md">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white shadow-md">
               <SelectItem value="all">All</SelectItem>
               <SelectItem value="warehouse">Warehouse & Logistics</SelectItem>
               <SelectItem value="hr">HR</SelectItem>
