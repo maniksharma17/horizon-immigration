@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { MapPin, Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const formSchema = z.object({
   fullName: z.string().min(5, 'Full name must be at least 5 characters'),
