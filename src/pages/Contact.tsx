@@ -102,17 +102,17 @@ const Contact = () => {
                     <Button variant={"outline"} className='mt-2'><a href="https://wa.me/+919528387189">Send Message</a></Button>
                   </div>
 
-                  <Button variant={"outline"} className='mt-2 w-full p-4 shadow-lg flex justify-start'><a href="https://www.instagram.com/horizon_immigration1/" className='flex flex-row gap-2 items-center'>
+                  <Button variant={"outline"} className='mt-2 w-fit p-4 shadow-lg flex justify-start'><a href="https://www.instagram.com/horizon_immigration1/" className='flex flex-row gap-2 items-center'>
                   <img src='/InstagramMenuIcon.svg' className='w-7 h-7' />
                   <span>Follow on Instagram</span>
                   </a></Button>
 
-                  <Button variant={"outline"} className='w-full p-4 shadow-lg flex justify-start'><a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr" className='flex flex-row gap-2 items-center'>
+                  <Button variant={"outline"} className='w-fit p-4 shadow-lg flex justify-start'><a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr" className='flex flex-row gap-2 items-center'>
                   <img src='/FacebookMenuIcon.svg' className='w-6 h-6' /> 
                   <span>Connect on Facebook</span>
                   </a></Button>
 
-                  <Button variant={"outline"} className='w-full p-4 shadow-lg flex justify-start'><a href="https://www.youtube.com/@horizon_immigration1" className='flex flex-row gap-2 items-center'>
+                  <Button variant={"outline"} className='w-fit p-4 shadow-lg flex justify-start'><a href="https://www.youtube.com/@horizon_immigration1" className='flex flex-row gap-2 items-center'>
                   <img src='/YoutubeMenuIcon.svg' className='w-6 h-6' /> 
                   <span>Subscribe on Youtube</span>
                   </a></Button>
