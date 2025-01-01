@@ -79,10 +79,10 @@ const Contact = () => {
     <div className='relative check-bg w-full flex lg:flex-row flex-col lg:px-20 lg:pt-10 px-4 pt-16 items-center'>
       {/* Hero Section */}
       <div className="bg-transparent">
-        <div className="container mx-auto p-8 max-md:pt-8 max-md:pb-2">
+        <div className="container mx-auto p-16 max-md:p-2 max-md:pt-8 max-md:pb-2">
           <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
             <div className="text-center">
-              <h1 className="text-4xl max-md:text-3xl font-bold mb-4">Contact Us</h1>
+              <h1 className="text-4xl max-md:text-3xl text-accent font-bold mb-4">Contact Us</h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Reach out to us for inquiries or assistance with UAE immigration and job opportunities.
               </p>
@@ -126,7 +126,7 @@ const Contact = () => {
       {/* Contact Form */}
       <div className="container py-8 m-auto w-full">
         <div className="max-w-4xl mx-auto bg-white/80 p-8 shadow-2xl border">
-          <h2 className="text-4xl text-orange-600 font-bold mb-6 text-center">Get in Touch</h2>
+          <h2 className="text-4xl text-accent font-bold mb-6 text-center">Get in Touch</h2>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
