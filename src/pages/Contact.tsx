@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { Mail } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const formSchema = z.object({
@@ -86,21 +86,28 @@ const Contact = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Reach out to us for inquiries or assistance with UAE immigration and job opportunities.
               </p>
-              <div className="flex flex-row justify-center max-md:flex-col gap-4">
-                {[
-                  {
-                    icon: Mail,
-                    title: 'Email',
-                    details: 'team@immigrationhorizon.com',
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
-                    <item.icon className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
-                    <h3 className="font-semibold max-md:text-lg mb-2 inline">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.details}</p>
+              <div className="flex flex-col justify-center max-md:flex-col gap-2">
+                
+                  <div  className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
+                    <Mail className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
+                    <h3 className="font-semibold max-md:text-lg mb-2 inline">Mail</h3>
+                    <p className="text-muted-foreground">team@immigrationhorizon@gmail.com</p>
                     <Button variant={"outline"} className='mt-2'><a href="mailto:team@immigrationhorizon.com?body=Hello">Send Mail</a></Button>
                   </div>
-                ))}
+
+                  <div  className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
+                    <Phone className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
+                    <h3 className="font-semibold max-md:text-lg mb-2 inline">Phone</h3>
+                    <p className="text-muted-foreground">+91 95283 87189</p>
+                    <Button variant={"outline"} className='mt-2'><a href="tel: +91 95283 87189">Make Call</a></Button>
+                  </div>
+
+                  <div  className="text-left bg-white/90 border p-4 overflow-x-clip flex flex-col rounded-lg shadow-lg">
+                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.instagram.com/horizon_immigration1/">Follow on Instagram</a></Button>
+                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr">Connect on Facebook</a></Button>
+                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.youtube.com/@horizon_immigration1">Subscribe on Youtube</a></Button>
+                  </div>
+                
               </div>
             </div>
           </div>
@@ -264,10 +271,11 @@ const Contact = () => {
                         <SelectItem value="warehouse">
                           Warehouse & Logistics
                         </SelectItem>
-                        <SelectItem value="sales">Sales</SelectItem>
-                        <SelectItem value="hr">HR</SelectItem>
-                        <SelectItem value="trade">Trade Jobs</SelectItem>
-                        <SelectItem value="hospitality">Hospitality</SelectItem>
+                        <SelectItem value="Sales">Sales</SelectItem>
+                        <SelectItem value="HR">HR</SelectItem>
+                        <SelectItem value="Trade">Trade Jobs</SelectItem>
+                        <SelectItem value="Hospitality">Hospitality</SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />

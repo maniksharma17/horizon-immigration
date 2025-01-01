@@ -10,15 +10,15 @@ const About = () => {
         <div className="container mt-12 mx-auto px-4 max-w-6xl">
           <div className="flex flex-col w-full justify-center items-center">
             <h1 className="text-4xl text-left font-extrabold mb-4 w-full text-accent">About Horizon Immigration</h1>
-            <p className="text-lg text-left bg-gray-100 p-4 rounded-xl">
+            <p className="text-lg shadow-sm border text-left bg-gray-100 p-4 rounded-xl">
               Welcome to Horizon Immigration, your trusted partner for recruitment services in the UAE. We specialize in connecting top talent with leading employers across various industries, including warehouse and logistics, sales, HR, trade jobs, and hospitality. Our team is committed to providing exceptional service to candidates, ensuring seamless placement and career growth. With a strong network and expertise in UAE recruitment, we bridge the gap between job seekers and employers, fostering successful partnerships.
             </p>
           </div>
         </div>
         <div className='mt-4 px-24 max-md:px-4 flex flex-row max-md:flex-col gap-2 justify-center'>
-          <img src={'/about1.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
-          <img src={'/about2.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
-          <img src={'/about3.avif'} className='w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about1.avif'} className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about2.avif'} className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
+          <img src={'/about3.avif'} className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl'></img>
         </div>
       </section>
       
@@ -26,7 +26,7 @@ const About = () => {
       <section className="px-20 max-md:px-4 mt-16 text-left">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl font-bold mb-2 text-accent">Who Are We?</h2>
-          <p className="text-muted-foreground leading-relaxed bg-gray-100 p-4 rounded-xl">
+          <p className="text-gray-800 shadow-lg leading-relaxed bg-gray-100 p-4 rounded-xl">
           Horizon Immigration is a trusted and forward-thinking consultancy firm with a core focus on recruitment and immigration services within the UAE. Our mission is to connect outstanding professionals with leading employers, facilitating opportunities for career growth and organizational success. With a deep understanding of the UAE's dynamic job market and regulatory landscape, we aim to simplify and streamline the recruitment and immigration processes, making transitions effortless for individuals and businesses alike. Whether you're a skilled professional seeking the perfect job or an employer in search of exceptional talent, Horizon Immigration is committed to bridging the gap and delivering results that exceed expectations.          </p>
         </div>
       </section>
@@ -35,7 +35,7 @@ const About = () => {
       <section className="px-20 max-md:px-4 mt-16 text-left">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl font-bold mb-4 text-accent">Our Mission</h2>
-          <p className="text-muted-foreground leading-relaxed bg-gray-100 p-4 rounded-xl">
+          <p className="text-gray-800 shadow-lg leading-relaxed bg-gray-100 p-4 rounded-xl">
           Our mission is to empower professionals and businesses by simplifying and optimizing the recruitment and immigration journey. We aim to create opportunities that enable individuals to achieve their career aspirations while supporting organizations in building high-performing teams. With a client-centered approach, we are dedicated to delivering exceptional service, ensuring that every step of the process is seamless, transparent, and efficient. By fostering trust and collaboration, we contribute to the growth, success, and long-term sustainability of the people and businesses we serve. At Horizon Immigration, we strive to be more than just a consultancy – we aspire to be a trusted partner in your journey toward a brighter future.          </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ const About = () => {
               { number: '12+', label: 'Years of Experience' },
               { number: '98%', label: 'Client Satisfaction Rate' },
             ].map((stat, index) => (
-              <div key={index} className="text-left bg-gray-200 p-4 rounded-xl">
+              <div key={index} className="text-left bg-gray-100 hover:shadow-lg transition-all duration-300 p-4 rounded-xl">
                 <div className="text-4xl font-bold text-gray-700 mb-2">{stat.number}</div>
                 <div className="text-muted-foreground text-lg">{stat.label}</div>
               </div>

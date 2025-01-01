@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300',
         isScrolled
           ? 'bg-background backdrop-blur-md shadow-md'
           : 'bg-transparent'
@@ -32,10 +32,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          
+          <Link to="/" className="flex gap-2 items-center">
+            <img src='\logo_HI.png' className='w-20 h-20 bg-white'></img>
             <span
               className={cn(
-                'font-bold text-xl transition-colors',
+                'font-normal text-2xl max-md:text-lg transition-colors',
                 isScrolled ? 'text-foreground' : 'text-primary-foreground',
                 (location.pathname !== '/')  && 'text-foreground'
               )}
@@ -84,7 +86,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-2 space-y-2 border absolute right-5 top-10 rounded-lg shadow-lg p-4 bg-background">
+          <div className="md:hidden mt-2 space-y-2 border absolute right-5 top-13 rounded-lg shadow-lg p-4 bg-background">
             {[
               ['Home', '/'],
               ['About', '/about'],
