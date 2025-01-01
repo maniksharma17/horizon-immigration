@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useState } from 'react';
 
 const formSchema = z.object({
@@ -79,7 +79,7 @@ const Contact = () => {
     <div className='relative check-bg w-full flex lg:flex-row flex-col lg:px-20 lg:pt-10 px-4 pt-16 items-center'>
       {/* Hero Section */}
       <div className="bg-transparent">
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto p-8 max-md:pt-8 max-md:pb-2">
           <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl max-md:text-3xl font-bold mb-4">Contact Us</h1>
@@ -89,24 +89,33 @@ const Contact = () => {
               <div className="flex flex-col justify-center max-md:flex-col gap-2">
                 
                   <div  className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
-                    <Mail className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
+                    <Mail className="h-8 w-8 mx-auto mb-4 text-black inline mt-1 mr-2" />
                     <h3 className="font-semibold max-md:text-lg mb-2 inline">Mail</h3>
                     <p className="text-muted-foreground">team@immigrationhorizon@gmail.com</p>
                     <Button variant={"outline"} className='mt-2'><a href="mailto:team@immigrationhorizon.com?body=Hello">Send Mail</a></Button>
                   </div>
 
                   <div  className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
-                    <Phone className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
-                    <h3 className="font-semibold max-md:text-lg mb-2 inline">Phone</h3>
+                    <img src='/WhatsappMenuIcon.svg' className="h-8 w-8 mx-auto mb-4 text-primary inline mt-1 mr-2" />
+                    <h3 className="font-semibold max-md:text-lg mb-2 inline">Chat on Whatsapp</h3>
                     <p className="text-muted-foreground">+91 95283 87189</p>
-                    <Button variant={"outline"} className='mt-2'><a href="tel: +91 95283 87189">Make Call</a></Button>
+                    <Button variant={"outline"} className='mt-2'><a href="https://wa.me/+919528387189">Send Message</a></Button>
                   </div>
 
-                  <div  className="text-left bg-white/90 border p-4 overflow-x-clip flex flex-col rounded-lg shadow-lg">
-                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.instagram.com/horizon_immigration1/">Follow on Instagram</a></Button>
-                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr">Connect on Facebook</a></Button>
-                    <Button variant={"outline"} className='mt-2 w-fit'><a href="https://www.youtube.com/@horizon_immigration1">Subscribe on Youtube</a></Button>
-                  </div>
+                  <Button variant={"outline"} className='mt-2 w-full p-4 shadow-lg flex justify-start'><a href="https://www.instagram.com/horizon_immigration1/" className='flex flex-row gap-2 items-center'>
+                  <img src='/InstagramMenuIcon.svg' className='w-7 h-7' />
+                  <span>Follow on Instagram</span>
+                  </a></Button>
+
+                  <Button variant={"outline"} className='w-full p-4 shadow-lg flex justify-start'><a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr" className='flex flex-row gap-2 items-center'>
+                  <img src='/FacebookMenuIcon.svg' className='w-6 h-6' /> 
+                  <span>Connect on Facebook</span>
+                  </a></Button>
+
+                  <Button variant={"outline"} className='w-full p-4 shadow-lg flex justify-start'><a href="https://www.youtube.com/@horizon_immigration1" className='flex flex-row gap-2 items-center'>
+                  <img src='/YoutubeMenuIcon.svg' className='w-6 h-6' /> 
+                  <span>Subscribe on Youtube</span>
+                  </a></Button>
                 
               </div>
             </div>

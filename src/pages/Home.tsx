@@ -10,13 +10,13 @@ const Home = () => {
     <div className='relative'>
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16"
+        className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16 max-md:pt-0"
         style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${`/hero.avif`})` 
         }}
       >
-        <div className="container px-4 py-32">
-          <div className="max-w-3xl mx-auto text-center text-white">
+        <div className="container px-4">
+          <div className="max-w-3xl mx-auto text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Your Gateway to Career Opportunities in the UAE
             </h1>

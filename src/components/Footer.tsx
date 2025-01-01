@@ -1,4 +1,3 @@
-import { InstagramLogoIcon } from '@radix-ui/react-icons';
 import { Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -54,22 +53,40 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-white" />
                 <span><a href='mailto:team@immigrationhorizon.com'>team@immigrationhorizon.com</a></span>
               </li>
-              <li className="flex flex-row gap-2 items-start">
+              <li className="flex flex-row gap-2 items-center">
                 <Phone className="h-5 w-5 text-white" />
-                <span><a href='tel:+91 95283 87189'>+91 95283 87189</a></span>
+                <span><a href='tel:+91 8279506101'>+91 8279506101</a></span>
               </li>
-              <li className="flex flex-row gap-2 items-start">
-                <InstagramLogoIcon className="h-5 w-5 text-white" />
-                <span><a href='https://www.instagram.com/horizon_immigration1/'>Instagram</a></span>
+              <li className="flex flex-row gap-2 items-center">
+                <Phone className="h-5 w-5 text-white" />
+                <span><a href='tel:+91 8923620620'>+91 8923620620</a></span>
               </li>
-              <li className="flex flex-row gap-2 items-start">
-                <img src='/FacebookIcon.svg' className="h-5 w-5 text-white" />
-                <span><a href='https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr'>Facebook</a></span>
-              </li>
-              <li className="flex flex-row gap-2 items-start">
-                <img src='/YoutubeIcon.svg' className="h-5 w-5 text-white" />
-                <span><a href='https://www.youtube.com/@horizon_immigration1'>Youtube</a></span>
-              </li>
+              <div className='grid grid-cols-2 w-fit gap-2 md:flex md:flex-row justify-center items-center content-center'>
+
+                <li className="">
+                  <a href='https://wa.me/+919528387189'>
+                    <img src='/WhatsappIcon.svg' className="h-10 w-10" />
+                  </a>
+                </li>
+                
+                <li className="">
+                  <a href='https://www.instagram.com/horizon_immigration1/'>
+                    <img src='/InstagramIcon.svg' className="h-12 w-12" />
+                  </a>
+                </li>
+
+                <li className="flex justify-start">
+                  <a href='https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr'>
+                    <img src='/FacebookIcon.svg' className="h-10 w-10" />
+                  </a>
+                </li>
+
+                <li className="">
+                  <a href='https://www.youtube.com/@horizon_immigration1'>
+                    <img src='/YoutubeIcon.svg' className="h-12 w-12" />
+                  </a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>

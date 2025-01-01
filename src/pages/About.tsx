@@ -11,8 +11,7 @@ const About = () => {
           <div className="flex flex-col w-full justify-center items-center">
             <h1 className="text-4xl text-left font-extrabold mb-4 w-full text-accent">About Horizon Immigration</h1>
             <p className="text-lg shadow-sm border text-left bg-gray-100 p-4 rounded-xl">
-              Welcome to Horizon Immigration, your trusted partner for recruitment services in the UAE. We specialize in connecting top talent with leading employers across various industries, including warehouse and logistics, sales, HR, trade jobs, and hospitality. Our team is committed to providing exceptional service to candidates, ensuring seamless placement and career growth. With a strong network and expertise in UAE recruitment, we bridge the gap between job seekers and employers, fostering successful partnerships.
-            </p>
+            "Welcome to Horizon Immigration, A division of Sai Immigration (Regt) your trusted partner for recruitment services in the UAE. We specialize in connecting top talent with leading employers across various industries, including warehouse and logistics, sales, HR, trade jobs, and hospitality. Our team is committed to providing exceptional service to candidates, ensuring seamless placement and career growth. With a strong network and expertise in UAE recruitment, we bridge the gap between job seekers and employers, fostering successful partnerships."            </p>
           </div>
         </div>
         <div className='mt-4 px-24 max-md:px-4 flex flex-row max-md:flex-col gap-2 justify-center'>
@@ -27,7 +26,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-3xl font-bold mb-2 text-accent">Who Are We?</h2>
           <p className="text-gray-800 shadow-lg leading-relaxed bg-gray-100 p-4 rounded-xl">
-          Horizon Immigration is a trusted and forward-thinking consultancy firm with a core focus on recruitment and immigration services within the UAE. Our mission is to connect outstanding professionals with leading employers, facilitating opportunities for career growth and organizational success. With a deep understanding of the UAE's dynamic job market and regulatory landscape, we aim to simplify and streamline the recruitment and immigration processes, making transitions effortless for individuals and businesses alike. Whether you're a skilled professional seeking the perfect job or an employer in search of exceptional talent, Horizon Immigration is committed to bridging the gap and delivering results that exceed expectations.          </p>
+          Horizon Immigration, A division of Sai Immigration (Regt), is a trusted and forward-thinking consultancy firm with a core focus on recruitment and immigration services within the UAE. Our mission is to connect outstanding professionals with leading employers, facilitating opportunities for career growth and organizational success. With a deep understanding of the UAE's dynamic job market and regulatory landscape, we aim to simplify and streamline the recruitment and immigration processes, making transitions effortless for individuals and businesses alike. Whether you're a skilled professional seeking the perfect job or an employer in search of exceptional talent, Horizon Immigration is committed to bridging the gap and delivering results that exceed expectations.          </p>
         </div>
       </section>
 

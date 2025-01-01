@@ -6,6 +6,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Jobs from '@/pages/Jobs';
+import { WhatsappSocial } from './components/Socials';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </main>
         <Footer />
         <Toaster />
+        <WhatsappSocial />
       </div>
     </Router>
   );

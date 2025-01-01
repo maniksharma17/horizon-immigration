@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 p-0 transition-all duration-500',
+        'fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-500',
         isScrolled
           ? 'bg-background backdrop-blur-md shadow-md p-0'
           : 'bg-transparent'
@@ -88,7 +88,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-2 space-y-2 border absolute right-5 top-13 rounded-lg shadow-lg p-4 bg-background">
+          <div className="md:hidden mt-2 space-y-2 absolute rounded-lg right-2 top-13 w-[250px] bg-primary shadow-2xl py-8 px-4 text-white">
             {[
               ['Home', '/'],
               ['About', '/about'],
@@ -99,16 +99,38 @@ const Navbar = () => {
                 key={path}
                 to={path}
                 className={cn(
-                  'block py-2 px-4 border rounded-md transition-colors hover:bg-muted',
+                  'block py-2 px-4 rounded-md transition-colors hover:bg-muted',
                   location.pathname === path
-                    ? 'bg-primary text-white font-medium'
-                    : 'text-muted-foreground'
+                    ? 'bg-white text-black font-medium'
+                    : 'font-normal'
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {name}
               </Link>
             ))}
+            <div className='w-full flex flex-row justify-evenly pt-8 items-center gap-2'>
+              <a href="https://wa.me/+919528387189">
+                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                  <img src="/WhatsappMenuIcon.svg" className="h-8 w-8" />
+                </li>
+              </a>
+              <a href="https://www.instagram.com/horizon_immigration1/">
+                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                  <img src="/InstagramMenuIcon.svg" className="h-10 w-10" />
+                </li>
+              </a>
+              <a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr">
+                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                  <img src="/FacebookMenuIcon.svg" className="h-8 w-8" />
+                </li>
+              </a>
+              <a href="https://www.youtube.com/@horizon_immigration1">
+                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                  <img src="/YoutubeMenuIcon.svg" className="h-10 w-10" />
+                </li>
+              </a>
+            </div>
           </div>
         )}
       </div>
