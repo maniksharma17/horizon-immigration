@@ -26,7 +26,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300',
         isScrolled
-          ? 'bg-background backdrop-blur-md shadow-md'
+          ? 'bg-background backdrop-blur-md shadow-md p-0'
           : 'bg-transparent'
       )}
     >
@@ -34,10 +34,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           
           <Link to="/" className="flex gap-2 items-center">
-            <img src='\logo_HI.png' className='w-20 h-20 bg-white'></img>
+            <img src='\logo_HI.png' className={cn('w-20 h-20 bg-white', 
+              isScrolled ? 'hidden' : 'block'
+            )}></img>
             <span
               className={cn(
-                'font-normal text-2xl max-md:text-lg transition-colors',
+                'font-normal text-left text-2xl max-md:text-lg transition-colors',
                 isScrolled ? 'text-foreground' : 'text-primary-foreground',
                 (location.pathname !== '/')  && 'text-foreground'
               )}
