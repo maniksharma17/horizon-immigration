@@ -76,10 +76,10 @@ const Contact = () => {
   }
 
   return (
-    <div className='relative check-bg flex lg:flex-row flex-col lg:px-20 lg:pt-10 px-4 pt-16 items-center'>
+    <div className='relative check-bg w-full flex lg:flex-row flex-col lg:px-20 lg:pt-10 px-4 pt-16 items-center'>
       {/* Hero Section */}
       <div className="bg-transparent">
-        <div className="container mx-auto max-w-5xl p-8">
+        <div className="container mx-auto py-8">
           <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl max-md:text-3xl font-bold mb-4">Contact Us</h1>
