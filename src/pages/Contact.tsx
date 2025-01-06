@@ -58,7 +58,7 @@ const Contact = () => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try{
       setIsLoading(true)
-      const url = "https://script.google.com/macros/s/AKfycbxrxMNsnVROYXL9Lk46nz8a8_9TVZ-PHDVHJAJadOlXlPhOjhpPrVNR1CpwrxsTFBWR/exec"
+      const url = "https://script.google.com/macros/s/AKfycbyGoV3kIxEndacunf7CP_94XZ0R0H6U6dbGB-aiQ1yJg_ppuOqcyKase8E15rbUlp5k/exec"
       await fetch(url,{
         method:"POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
