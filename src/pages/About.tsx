@@ -10,8 +10,9 @@ const About = () => {
         <div className="container mt-12 mx-auto px-4 max-w-6xl">
           <div className="flex flex-col w-full justify-center items-center">
             <h1 className="text-4xl text-left font-extrabold mb-4 w-full text-accent">About Horizon Immigration</h1>
-            <p className="text-lg shadow-sm border text-left bg-gray-100 p-4 rounded-xl">
-            "Welcome to Horizon Immigration, A division of Sai Immigration (Regt) your trusted partner for recruitment services in the UAE. We specialize in connecting top talent with leading employers across various industries, including warehouse and logistics, sales, HR, trade jobs, and hospitality. Our team is committed to providing exceptional service to candidates, ensuring seamless placement and career growth. With a strong network and expertise in UAE recruitment, we bridge the gap between job seekers and employers, fostering successful partnerships."            </p>
+            <h2 className="text-lg shadow-sm border text-left bg-gray-100 p-4 rounded-xl">
+            "Welcome to Horizon Immigration, A division of Sai Immigration (Regt) your trusted partner for recruitment services in the UAE. We specialize in connecting top talent with leading employers across various industries, including warehouse and logistics, sales, HR, trade jobs, and hospitality. Our team is committed to providing exceptional service to candidates, ensuring seamless placement and career growth. With a strong network and expertise in UAE recruitment, we bridge the gap between job seekers and employers, fostering successful partnerships."
+            </h2>
           </div>
         </div>
         <div className='mt-4 px-24 max-md:px-4 flex flex-row max-md:flex-col gap-2 justify-center'>

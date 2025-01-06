@@ -103,9 +103,9 @@ const Jobs = () => {
       <div className="container px-4 py-20 m-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Job Opportunities</h1>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-lg text-muted-foreground">
             Explore the latest job opportunities across various industries in the UAE.
-          </p>
+          </h2>
         </div>
 
         {/* Filters */}

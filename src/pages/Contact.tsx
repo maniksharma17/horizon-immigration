@@ -83,9 +83,9 @@ const Contact = () => {
           <div className="aspect-w-16 aspect-h-9 flex items-center justify-center">
             <div className="text-center">
               <h1 className="text-4xl max-md:text-3xl text-accent font-bold mb-4">Contact Us</h1>
-              <p className="text-lg text-muted-foreground mb-8">
+              <h2 className="text-lg text-muted-foreground mb-8">
                 Reach out to us for inquiries or assistance with UAE immigration and job opportunities.
-              </p>
+              </h2>
               <div className="flex flex-col justify-center max-md:flex-col gap-2">
                 
                   <div  className="text-left bg-white/90 border p-4 overflow-x-clip rounded-lg shadow-lg">
