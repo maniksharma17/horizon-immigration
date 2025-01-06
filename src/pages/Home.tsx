@@ -7,7 +7,7 @@ import FAQSection from '@/components/HomeFAQ';
 
 const Home = () => {
   return (
-    <div className='relative'>
+    <main className='relative'>
       {/* Hero Section */}
       <section 
         className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16 max-md:pt-0"
@@ -20,10 +20,10 @@ const Home = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Your Gateway to Career Opportunities in the UAE
             </h1>
-            <p className="text-xl mb-8 text-gray-200">
+            <h2 className="text-xl mb-8 text-gray-200">
               We connect talented professionals with leading employers across the UAE,
               providing comprehensive recruitment and immigration services.
-            </p>
+            </h2>
             <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-gradient-to-b from-accent px-8 py-6 text-xl rounded-lg to-orange-900 hover:scale-110 transition-all duration-300">
                 <Link to="/jobs">Browse Jobs</Link>
@@ -49,7 +49,7 @@ const Home = () => {
       <FAQSection />
 
 
-    </div>
+    </main>
   );
 };
 
