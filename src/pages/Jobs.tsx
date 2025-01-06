@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Briefcase, GraduationCap, Clock, Search, Wrench } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet"; // For SEO enhancements
 
 interface JobType {
   title: string;
@@ -27,7 +28,7 @@ const Jobs = () => {
   const [filter, setFilter] = useState("");
   const [category, setCategory] = useState("all");
   const [filteredJobs, setFilteredJobs] = useState<JobType[]>([]);
-  
+
   const [jobCategories, setJobCategories] = useState<Record<string, JobType[]>>({
     warehouse: [] as JobType[],
     hr: [] as JobType[],
@@ -37,7 +38,6 @@ const Jobs = () => {
     all: [] as JobType[],
   });
 
-  // Classify jobs based on title
   const classifyJob = (job: JobType): string => {
     const warehouseKeywords = ["warehouse", "logistics", "supply"];
     const hrKeywords = ["hr", "admin", "human resource"];
@@ -55,7 +55,6 @@ const Jobs = () => {
     return "all";
   };
 
-  // Initialize job categories
   useEffect(() => {
     const categorizedJobs = jobs.reduce(
       (acc, job) => {
@@ -70,7 +69,6 @@ const Jobs = () => {
     setFilteredJobs(categorizedJobs.all);
   }, []);
 
-  // Filter jobs based on search and category
   useEffect(() => {
     const searchLower = filter.toLowerCase();
     const filtered = jobCategories[category].filter((job: JobType) =>
@@ -88,7 +86,6 @@ const Jobs = () => {
     const startIndex = (pageNumber - 1) * itemsPerPage
     const currentData = filteredJobs.slice(startIndex, startIndex + itemsPerPage)
     setCurrentJobs(currentData)
-    
   }, [pageNumber, itemsPerPage, filteredJobs])
 
   const goToPage = (pageNumber: number) => {
@@ -100,16 +97,24 @@ const Jobs = () => {
 
   return (
     <div className="pt-16 h-auto pb-32 check-bg">
+      <Helmet>
+        <title>Job Opportunities in UAE - Immigration Horizon</title>
+        <meta name="description" content="Explore the latest job opportunities across various industries in the UAE. Apply for positions in warehouse, sales, hospitality, HR, and more." />
+        <meta name="keywords" content="jobs, UAE, warehouse, HR, sales, hospitality, trade jobs, immigration" />
+      </Helmet>
+
       <div className="container px-4 py-20 m-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Job Opportunities</h1>
-          <h2 className="text-lg text-muted-foreground">
-            Explore the latest job opportunities across various industries in the UAE.
-          </h2>
-        </div>
+        <header>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4">Job Opportunities</h1>
+            <h2 className="text-lg text-muted-foreground">
+              Explore the latest job opportunities across various industries in the UAE.
+            </h2>
+          </div>
+        </header>
 
         {/* Filters */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
@@ -132,74 +137,77 @@ const Jobs = () => {
               <SelectItem value="sales">Sales</SelectItem>
             </SelectContent>
           </Select>
-        </div>
+        </section>
 
         {/* Job Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentJobs.map((job, index) => (
-            <Card key={index}>
-              <CardContent className="pt-6 h-fit">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-semibold text-left text-lg mb-1 w-full">
-                      {job.title}
-                    </h3>
+        <main>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {currentJobs.map((job, index) => (
+              <Card key={index}>
+                <CardContent className="pt-6 h-fit">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="font-semibold text-left text-lg mb-1 w-full">
+                        {job.title}
+                      </h3>
+                    </div>
+                    <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                      {"Full Time"}
+                    </div>
                   </div>
-                  <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-                    {"Full Time"}
+                  <p className="text-muted-foreground text-left text-sm mb-4">
+                    {job.description}
+                  </p>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-muted-foreground">
+                      <Briefcase className="h-4 w-4 mr-2" size={20} />
+                      <span className="w-fit text-left">{job.experience}</span>
+                    </div>
+                    <div className="flex items-center text-muted-foreground">
+                      <Clock className="h-4 w-4 mr-2" />
+                      <span className="w-fit text-left">{job.salary}</span>
+                    </div>
+                    <div className="flex items-center text-left text-muted-foreground">
+                      <Wrench className="h-4 w-4 mr-2" />
+                      <span className="w-fit text-left">{job.skills}</span>
+                    </div>
+                    <div className="flex items-center text-left text-muted-foreground">
+                      <GraduationCap className="h-4 w-4 mr-2" />
+                      <span className="w-fit text-left">{job.education}</span>
+                    </div>
                   </div>
-                </div>
-                <p className="text-muted-foreground text-left text-sm mb-4">
-                  {job.description}
-                </p>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-muted-foreground">
-                    <Briefcase className="h-4 w-4 mr-2" size={20} />
-                    <span className="w-fit text-left">{job.experience}</span>
-                  </div>
-                  <div className="flex items-center text-muted-foreground">
-                    <Clock className="h-4 w-4 mr-2" />
-                    <span className="w-fit text-left">{job.salary}</span>
-                  </div>
-                  <div className="flex items-center text-left text-muted-foreground">
-                    <Wrench className="h-4 w-4 mr-2" />
-                    <span className="w-fit text-left">{job.skills}</span>
-                  </div>
-                  <div className="flex items-center text-left text-muted-foreground">
-                    <GraduationCap className="h-4 w-4 mr-2" />
-                    <span className="w-fit text-left">{job.education}</span>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                onClick={()=>{navigate('/contact'); window.scrollTo(0, 0)}}
-                className="w-full hover:scale-105 transition-all duration-200 hover:bg-orange-600">
-                  Apply Now
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+                </CardContent>
+                <CardFooter>
+                  <Button 
+                    onClick={() => { navigate('/contact'); window.scrollTo(0, 0) }}
+                    className="w-full hover:scale-105 transition-all duration-200 hover:bg-orange-600">
+                    Apply Now
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </main>
       </div>
 
-      <div className="flex flex-row gap-8 justify-center items-center">
+      {/* Pagination */}
+      <section className="flex flex-row gap-8 justify-center items-center">
         <div>
           <Button 
-          onClick={() => goToPage(pageNumber - 1)}
-          disabled={pageNumber === 1}
-          variant={"outline"}>Prev</Button>
+            onClick={() => goToPage(pageNumber - 1)}
+            disabled={pageNumber === 1}
+            variant={"outline"}>Prev</Button>
         </div>
         <div>
           {pageNumber}/{totalPages}
         </div>
         <div>
           <Button 
-          onClick={() => goToPage(pageNumber + 1)}
-          disabled={pageNumber === totalPages}
-          variant={"outline"}>Next</Button>
+            onClick={() => goToPage(pageNumber + 1)}
+            disabled={pageNumber === totalPages}
+            variant={"outline"}>Next</Button>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
