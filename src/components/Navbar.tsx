@@ -75,6 +75,7 @@ const Navbar = () => {
           <button
             className="md:hidden p-2 focus:outline-none"
             onClick={toggleMobileMenu}
+            value={"menu"}
           >
             {isMobileMenuOpen ? (
               <X className={cn(
@@ -111,24 +112,24 @@ const Navbar = () => {
             ))}
             <div className='w-full flex flex-row justify-evenly pt-8 items-center gap-2'>
               <a href="https://wa.me/+919528387189">
-                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                <div className="flex cursor-pointer flex-row gap-2 items-start">
                   <img src="/WhatsappMenuIcon.svg" alt="whatsapp logo" className="h-8 w-8" />
-                </li>
+                </div>
               </a>
               <a href="https://www.instagram.com/horizon_immigration1/">
-                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                <div className="flex cursor-pointer flex-row gap-2 items-start">
                   <img src="/InstagramMenuIcon.svg" alt="instagram logo" className="h-10 w-10" />
-                </li>
+                </div>
               </a>
               <a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr">
-                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                <div className="flex cursor-pointer flex-row gap-2 items-start">
                   <img src="/FacebookMenuIcon.svg" alt="facebook logo" className="h-8 w-8" />
-                </li>
+                </div>
               </a>
               <a href="https://www.youtube.com/@horizon_immigration1">
-                <li className="flex cursor-pointer flex-row gap-2 items-start">
+                <div className="flex cursor-pointer flex-row gap-2 items-start">
                   <img src="/YoutubeMenuIcon.svg" alt="youtube logo" className="h-10 w-10" />
-                </li>
+                </div>
               </a>
             </div>
           </div>
