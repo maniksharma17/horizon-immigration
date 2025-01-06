@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           
           <Link to="/" className="flex gap-2 items-center">
-            <img src='\logo_HI.png' className={cn('w-16 h-16 bg-white', 
+            <img src='\logo_HI.png' alt="horizon immigration logo" className={cn('w-16 h-16 bg-white', 
               isScrolled ? 'hidden' : 'block'
             )}></img>
             <span
@@ -112,22 +112,22 @@ const Navbar = () => {
             <div className='w-full flex flex-row justify-evenly pt-8 items-center gap-2'>
               <a href="https://wa.me/+919528387189">
                 <li className="flex cursor-pointer flex-row gap-2 items-start">
-                  <img src="/WhatsappMenuIcon.svg" className="h-8 w-8" />
+                  <img src="/WhatsappMenuIcon.svg" alt="whatsapp logo" className="h-8 w-8" />
                 </li>
               </a>
               <a href="https://www.instagram.com/horizon_immigration1/">
                 <li className="flex cursor-pointer flex-row gap-2 items-start">
-                  <img src="/InstagramMenuIcon.svg" className="h-10 w-10" />
+                  <img src="/InstagramMenuIcon.svg" alt="instagram logo" className="h-10 w-10" />
                 </li>
               </a>
               <a href="https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr">
                 <li className="flex cursor-pointer flex-row gap-2 items-start">
-                  <img src="/FacebookMenuIcon.svg" className="h-8 w-8" />
+                  <img src="/FacebookMenuIcon.svg" alt="facebook logo" className="h-8 w-8" />
                 </li>
               </a>
               <a href="https://www.youtube.com/@horizon_immigration1">
                 <li className="flex cursor-pointer flex-row gap-2 items-start">
-                  <img src="/YoutubeMenuIcon.svg" className="h-10 w-10" />
+                  <img src="/YoutubeMenuIcon.svg" alt="youtube logo" className="h-10 w-10" />
                 </li>
               </a>
             </div>

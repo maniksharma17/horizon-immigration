@@ -5,7 +5,7 @@ export const WhatsappSocial = () => {
 
         <a href="https://wa.me/+919528387189">
           <li className="flex cursor-pointer flex-row gap-2 items-start">
-            <img src="/WhatsappIcon.svg" className="h-12 w-12 md:h-14 md:w-14 text-white" />
+            <img src="/WhatsappIcon.svg" alt="whatsapp logo" className="h-12 w-12 md:h-14 md:w-14 text-white" />
           </li>
         </a>
         

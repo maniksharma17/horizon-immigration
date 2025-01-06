@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info Section */}
           <div className='text-left col-span-1'>
             <div className="flex items-center space-x-3 mb-4">
-              <img src='\logo_HI.png' className="h-20 w-20 text-primary bg-white p-0" />
+              <img src='\logo_HI.png' alt="horizon immigration logo" className="h-20 w-20 text-primary bg-white p-0" />
               <span className="font-extrabold text-xl">Horizon Immigration</span>
             </div>
             <p className="text-md text-primary-foreground">
@@ -65,25 +65,25 @@ const Footer = () => {
 
                 <li className="">
                   <a href='https://wa.me/+919528387189'>
-                    <img src='/WhatsappIcon.svg' className="h-10 w-10" />
+                    <img src='/WhatsappIcon.svg' alt="whatsapp logo" className="h-10 w-10" />
                   </a>
                 </li>
                 
                 <li className="">
                   <a href='https://www.instagram.com/horizon_immigration1/'>
-                    <img src='/InstagramIcon.svg' className="h-12 w-12" />
+                    <img src='/InstagramIcon.svg' alt="instagram logo" className="h-12 w-12" />
                   </a>
                 </li>
 
                 <li className="flex justify-start">
                   <a href='https://www.facebook.com/share/19hbgqrYsi/?mibextid=wwXIfr'>
-                    <img src='/FacebookIcon.svg' className="h-10 w-10" />
+                    <img src='/FacebookIcon.svg' alt="facebook logo" className="h-10 w-10" />
                   </a>
                 </li>
 
                 <li className="">
                   <a href='https://www.youtube.com/@horizon_immigration1'>
-                    <img src='/YoutubeIcon.svg' className="h-12 w-12" />
+                    <img src='/YoutubeIcon.svg' alt="youtube logo" className="h-12 w-12" />
                   </a>
                 </li>
               </div>
