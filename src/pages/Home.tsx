@@ -5,6 +5,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import HomeServices from '@/components/HomeServices';
 import FAQSection from '@/components/HomeFAQ';
 import { Helmet } from 'react-helmet';
+import { images } from '@/lib/constants';
 
 const Home = () => {
   return (
@@ -37,7 +38,7 @@ const Home = () => {
         <section 
           className="min-h-screen flex items-center justify-center bg-cover bg-center pt-16 max-md:pt-0"
           style={{ 
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${`/hero.avif`})` 
+            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${images.hero})` 
           }}
         >
           <div className="container px-4">

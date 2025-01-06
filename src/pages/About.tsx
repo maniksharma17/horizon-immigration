@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { images } from '@/lib/constants';
 import { Users, Target, Heart, TrendingUp, Sparkles } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
@@ -60,9 +61,9 @@ const About = () => {
           </div>
         </div>
         <div className='mt-4 px-24 max-md:px-4 flex flex-row max-md:flex-col gap-2 justify-center'>
-          <img src={'/about1.avif'} alt="Office environment at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
-          <img src={'/about2.avif'} alt="Consultation at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
-          <img src={'/about3.avif'} alt="Teamwork at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
+          <img src={images.about1} alt="Office environment at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
+          <img src={images.about2} alt="Consultation at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
+          <img src={images.about3} alt="Teamwork at Horizon Immigration" className='shadow-lg w-[20vw] max-md:w-full m-0 rounded-3xl' />
         </div>
       </section>
 
