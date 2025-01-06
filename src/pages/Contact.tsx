@@ -66,13 +66,12 @@ const Contact = () => {
         body: `FullName=${values.fullName}&Phone=${values.phone}&Email=${values.email}&City=${values.city}&State=${values.state}&Country=${values.country}&PinCode=${values.pinCode}&Experience=${values.experience}&JobType=${values.jobType}&Message=${values.message}`,
       })
         .then((res) => res.text())
-        .then((data) => {
+        .then(() => {
           toast.success('Submitted successfully.');
-          console.log(data);
         })
-        .catch((error) => console.log(error));
-    } catch (error) {
-      console.log(error);
+        .catch(() => console.log("Error"));
+    } catch {
+      console.log("Error");
     } finally {
       setIsLoading(false);
     }
